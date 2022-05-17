@@ -65,32 +65,12 @@ def findAvilable(ok,co):
                 if(yes[-1] == co):
                     return x
     return False
-
-def appl(x,y):
-    if(y == 'NOT'):
-        ans = findAvilable(x,dict[x][y][0])
-        if(ans != False):
-            result[x] = NOT(int(result[ans]))
-        else:
-            a = int(input(f'{dict[x][y][0]} '))
-            result[x] = NOT(a)
-            
-    elif(y == 'AND2'):
-        print('ok')
-        
-    elif(y == 'OR2'):
-        print('ok')
-    elif(y == 'NAND2'):
-        print('ok')
-    elif(y == 'NOR2'):
-        print('ok')
-    elif(y == 'XOR2'):
-        print('ok')
-    elif(y == 'NAND3'):
-        print('ok')
-    elif(y == 'NOR3'):
-        print('ok')
-
+def inputAvi(ind):
+    for x in result:
+        if(x==ind):
+            return result[x]
+    a = int(input(f'{ind} '))
+    return a
 def apple(x,y):
     if(y == 'NOT'):
         ans = findAvilable(x,dict[x][y][0])
@@ -99,7 +79,7 @@ def apple(x,y):
             result[x] = re
             result[dict[x][y][-1]] = re
         else:
-            a = int(input(f'{dict[x][y][0]} '))
+            a = inputAvi(dict[x][y][0])
             re = NOT(a)
             result[x] = re
             result[dict[x][y][0]] = a
@@ -114,21 +94,21 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = AND2((result[ans]),a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = AND2(a,(result)[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} '))
-                b = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
                 re = AND2(a,b)
                 result[x] = re
                 result[dict[x][y][0]] = a
@@ -145,21 +125,21 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = OR2((result[ans]),a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = OR2(a,(result)[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} '))
-                b = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
                 re = OR2(a,b)
                 result[x] = re
                 result[dict[x][y][0]] = a
@@ -174,23 +154,23 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = NAND2(result[ans],a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = NAND2(a,result[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} \n'))
-                b = int(input(f'{dict[x][y][1]} '))
-                result[x] = NAND2(a,b)
-                re = re
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
+                re = NAND2(a,b)
+                result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][1]] = b
                 result[dict[x][y][-1]] = re
@@ -203,21 +183,21 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = NOR2((result[ans]),a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = NOR2(a,(result)[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} '))
-                b = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
                 re = NOR2(a,b)
                 result[x] = re
                 result[dict[x][y][0]] = a
@@ -232,21 +212,21 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = XOR2((result[ans]),a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = XOR2(a,(result)[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} '))
-                b = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
                 re = XOR2(a,b)
                 result[x] = re
                 result[dict[x][y][0]] = a
@@ -261,21 +241,21 @@ def apple(x,y):
                 result[x] = re
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][1])
                 re = XNOR2((result[ans]),a)
                 result[x] = re
                 result[dict[x][y][1]] = a
                 result[dict[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = int(input(f'{dict[x][y][0]} '))
+                a = inputAvi(dict[x][y][0])
                 re = XNOR2(a,(result)[ans1])
                 result[x] = re
                 result[dict[x][y][0]] = a
                 result[dict[x][y][-1]] = re
             else:
-                a = int(input(f'{dict[x][y][0]} '))
-                b = int(input(f'{dict[x][y][1]} '))
+                a = inputAvi(dict[x][y][0])
+                b = inputAvi(dict[x][y][1])
                 re = XNOR2(a,b)
                 result[x] = re
                 result[dict[x][y][0]] = a
@@ -290,42 +270,42 @@ def apple(x,y):
             result[x] = re
             result[dict[x][y][-1]] = re
         elif(ans!=False and ans1 != False and ans2 == False):
-            a = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][2])
             re = NAND3((result)[ans],(result)[ans1],a)
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][2]] = a
         elif(ans!=False and ans1 == False and ans2 != False):
-            a = int(input(f'{dict[x][y][1]} '))
+            a = inputAvi(dict[x][y][1])
             re = NAND3((result)[ans],a,(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][1]] = a
         elif(ans==False and ans1 != False and ans2 != False):
-            a = int(input(f'{dict[x][y][0]} '))
+            a = inputAvi(dict[x][y][0])
             re = NAND3(a,(result)[ans1],(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
         elif(ans==False and ans1 == False and ans2 != False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][1]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][1])
             re = NAND3(a,b,(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
             result[dict[x][y][1]] = b
         elif(ans==False and ans1 != False and ans2 == False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][2])
             re = NAND3(a,(result)[ans1],b)
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
             result[dict[x][y][2]] = b
         elif(ans!=False and ans1 == False and ans2 == False):
-            a = int(input(f'{dict[x][y][1]} '))
-            b = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][1])
+            b = inputAvi(dict[x][y][2])
             
             re = NAND3((result)[ans],a,b)
             result[x] = re
@@ -333,9 +313,9 @@ def apple(x,y):
             result[dict[x][y][1]] = a
             result[dict[x][y][2]] = b
         elif(ans==False and ans1 == False and ans2 == False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][1]} '))
-            c = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][1])
+            c = inputAvi(dict[x][y][2])
             
             re = NAND3(a,b,c)
             result[x] = re
@@ -352,42 +332,42 @@ def apple(x,y):
             result[x] = re
             result[dict[x][y][-1]] = re
         elif(ans!=False and ans1 != False and ans2 == False):
-            a = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][2])
             re = NOR3((result)[ans],(result)[ans1],a)
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][2]] = a
         elif(ans!=False and ans1 == False and ans2 != False):
-            a = int(input(f'{dict[x][y][1]} '))
+            a = inputAvi(dict[x][y][1])
             re = NOR3((result)[ans],a,(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][1]] = a
         elif(ans==False and ans1 != False and ans2 != False):
-            a = int(input(f'{dict[x][y][0]} '))
+            a = inputAvi(dict[x][y][0])
             re = NOR3(a,(result)[ans1],(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
         elif(ans==False and ans1 == False and ans2 != False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][1]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][1])
             re = NOR3(a,b,(result)[ans2])
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
             result[dict[x][y][1]] = b
         elif(ans==False and ans1 != False and ans2 == False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][2])
             re = NOR3(a,(result)[ans1],b)
             result[x] = re
             result[dict[x][y][-1]] = re
             result[dict[x][y][0]] = a
             result[dict[x][y][2]] = b
         elif(ans!=False and ans1 == False and ans2 == False):
-            a = int(input(f'{dict[x][y][1]} '))
-            b = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][1])
+            b = inputAvi(dict[x][y][2])
             
             re = NOR3((result)[ans],a,b)
             result[x] = re
@@ -395,9 +375,9 @@ def apple(x,y):
             result[dict[x][y][1]] = a
             result[dict[x][y][2]] = b
         elif(ans==False and ans1 == False and ans2 == False):
-            a = int(input(f'{dict[x][y][0]} '))
-            b = int(input(f'{dict[x][y][1]} '))
-            c = int(input(f'{dict[x][y][2]} '))
+            a = inputAvi(dict[x][y][0])
+            b = inputAvi(dict[x][y][1])
+            c = inputAvi(dict[x][y][2])
             
             re = NOR3(a,b,c)
             result[x] = re
@@ -431,6 +411,7 @@ if __name__ == '__main__':
         for y in dict[x]:
             apple(x,y)
     print('output')
+    
     for x in range(1,N+1):
         print(f'{x} {result[x]}')
     
