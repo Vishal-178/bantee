@@ -58,10 +58,10 @@ def NOR3 (a, b, c):
         return 0
 
 def findAvilable(ok,co):
-    for x in dict:
+    for x in dit:
         if(ok!=x):
-            for y in dict[x]:
-                yes = dict[x][y]
+            for y in dit[x]:
+                yes = dit[x][y]
                 if(yes[-1] == co):
                     return x
     return False
@@ -73,318 +73,318 @@ def inputAvi(ind):
     return a
 def apple(x,y):
     if(y == 'NOT'):
-        ans = findAvilable(x,dict[x][y][0])
+        ans = findAvilable(x,dit[x][y][0])
         if(ans != False):
             re = NOT((result[ans]))
             result[x] = re
-            result[dict[x][y][-1]] = re
+            result[dit[x][y][-1]] = re
         else:
-            a = inputAvi(dict[x][y][0])
+            a = inputAvi(dit[x][y][0])
             re = NOT(a)
             result[x] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][-1]] = re
             
     elif(y == 'AND2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = AND2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = AND2((result[ans]),a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = AND2(a,(result)[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = AND2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
                 
         
     elif(y == 'OR2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = OR2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = OR2((result[ans]),a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = OR2(a,(result)[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = OR2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
     elif(y == 'NAND2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = NAND2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = NAND2(result[ans],a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = NAND2(a,result[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = NAND2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
     elif(y == 'NOR2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = NOR2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = NOR2((result[ans]),a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = NOR2(a,(result)[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = NOR2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
     elif(y == 'XOR2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = XOR2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = XOR2((result[ans]),a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = XOR2(a,(result)[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = XOR2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
     elif(y == 'XNOR2'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
         if(ans != False):
             if(ans1 != False):
                 re = XNOR2((result[ans]),(result)[ans1])
                 result[x] = re
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][1])
                 re = XNOR2((result[ans]),a)
                 result[x] = re
-                result[dict[x][y][1]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][1]] = a
+                result[dit[x][y][-1]] = re
         else:
             if(ans1 != False):
-                a = inputAvi(dict[x][y][0])
+                a = inputAvi(dit[x][y][0])
                 re = XNOR2(a,(result)[ans1])
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][-1]] = re
             else:
-                a = inputAvi(dict[x][y][0])
-                b = inputAvi(dict[x][y][1])
+                a = inputAvi(dit[x][y][0])
+                b = inputAvi(dit[x][y][1])
                 re = XNOR2(a,b)
                 result[x] = re
-                result[dict[x][y][0]] = a
-                result[dict[x][y][1]] = b
-                result[dict[x][y][-1]] = re
+                result[dit[x][y][0]] = a
+                result[dit[x][y][1]] = b
+                result[dit[x][y][-1]] = re
     elif(y == 'NAND3'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
-        ans2 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
+        ans2 = findAvilable(x,dit[x][y][1])
         if(ans!=False and ans1 != False and ans2 != False):
             re = NAND3((result)[ans],(result)[ans1],(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
+            result[dit[x][y][-1]] = re
         elif(ans!=False and ans1 != False and ans2 == False):
-            a = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][2])
             re = NAND3((result)[ans],(result)[ans1],a)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][2]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][2]] = a
         elif(ans!=False and ans1 == False and ans2 != False):
-            a = inputAvi(dict[x][y][1])
+            a = inputAvi(dit[x][y][1])
             re = NAND3((result)[ans],a,(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][1]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][1]] = a
         elif(ans==False and ans1 != False and ans2 != False):
-            a = inputAvi(dict[x][y][0])
+            a = inputAvi(dit[x][y][0])
             re = NAND3(a,(result)[ans1],(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
         elif(ans==False and ans1 == False and ans2 != False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][1])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][1])
             re = NAND3(a,b,(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][1]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][1]] = b
         elif(ans==False and ans1 != False and ans2 == False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][2])
             re = NAND3(a,(result)[ans1],b)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][2]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][2]] = b
         elif(ans!=False and ans1 == False and ans2 == False):
-            a = inputAvi(dict[x][y][1])
-            b = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][1])
+            b = inputAvi(dit[x][y][2])
             
             re = NAND3((result)[ans],a,b)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][1]] = a
-            result[dict[x][y][2]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][1]] = a
+            result[dit[x][y][2]] = b
         elif(ans==False and ans1 == False and ans2 == False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][1])
-            c = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][1])
+            c = inputAvi(dit[x][y][2])
             
             re = NAND3(a,b,c)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][1]] = b
-            result[dict[x][y][2]] = c
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][1]] = b
+            result[dit[x][y][2]] = c
     elif(y == 'NOR3'):
-        ans = findAvilable(x,dict[x][y][0])
-        ans1 = findAvilable(x,dict[x][y][1])
-        ans2 = findAvilable(x,dict[x][y][1])
+        ans = findAvilable(x,dit[x][y][0])
+        ans1 = findAvilable(x,dit[x][y][1])
+        ans2 = findAvilable(x,dit[x][y][1])
         if(ans!=False and ans1 != False and ans2 != False):
             re = NOR3((result)[ans],(result)[ans1],(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
+            result[dit[x][y][-1]] = re
         elif(ans!=False and ans1 != False and ans2 == False):
-            a = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][2])
             re = NOR3((result)[ans],(result)[ans1],a)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][2]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][2]] = a
         elif(ans!=False and ans1 == False and ans2 != False):
-            a = inputAvi(dict[x][y][1])
+            a = inputAvi(dit[x][y][1])
             re = NOR3((result)[ans],a,(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][1]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][1]] = a
         elif(ans==False and ans1 != False and ans2 != False):
-            a = inputAvi(dict[x][y][0])
+            a = inputAvi(dit[x][y][0])
             re = NOR3(a,(result)[ans1],(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
         elif(ans==False and ans1 == False and ans2 != False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][1])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][1])
             re = NOR3(a,b,(result)[ans2])
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][1]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][1]] = b
         elif(ans==False and ans1 != False and ans2 == False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][2])
             re = NOR3(a,(result)[ans1],b)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][2]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][2]] = b
         elif(ans!=False and ans1 == False and ans2 == False):
-            a = inputAvi(dict[x][y][1])
-            b = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][1])
+            b = inputAvi(dit[x][y][2])
             
             re = NOR3((result)[ans],a,b)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][1]] = a
-            result[dict[x][y][2]] = b
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][1]] = a
+            result[dit[x][y][2]] = b
         elif(ans==False and ans1 == False and ans2 == False):
-            a = inputAvi(dict[x][y][0])
-            b = inputAvi(dict[x][y][1])
-            c = inputAvi(dict[x][y][2])
+            a = inputAvi(dit[x][y][0])
+            b = inputAvi(dit[x][y][1])
+            c = inputAvi(dit[x][y][2])
             
             re = NOR3(a,b,c)
             result[x] = re
-            result[dict[x][y][-1]] = re
-            result[dict[x][y][0]] = a
-            result[dict[x][y][1]] = b
-            result[dict[x][y][2]] = c
+            result[dit[x][y][-1]] = re
+            result[dit[x][y][0]] = a
+            result[dit[x][y][1]] = b
+            result[dit[x][y][2]] = c
             
 
 
@@ -392,27 +392,25 @@ if __name__ == '__main__':
     N = int(input('Enter the number of Net: '))
     E = int(input('Enter the number of Gate: '))
     P = int(input('Enter the number of Input: '))
-    dict = {}
+    dit = {}
     result = {}
     for x in range(E):
         inp = input().split()
         pp = inp[2:len(inp)]
         temp = {inp[1]:pp}
-        dict[inp[0]] = temp
+        dit[inp[0]] = temp
     
-    for x in dict:
-        for y in dict[x]:
-            for z in range(len(dict[x][y])):
-                dict[x][y][z] = int(dict[x][y][z])
+    for x in dit:
+        for y in dit[x]:
+            for z in range(len(dit[x][y])):
+                dit[x][y][z] = int(dit[x][y][z])
     
-    
-    
-    for x in dict:
-        for y in dict[x]:
+    dit = dict(sorted(dit.items()))
+    for x in dit:
+        for y in dit[x]:
             apple(x,y)
     print('output')
     
     for x in range(1,N+1):
         print(f'{x} {result[x]}')
-    
 
